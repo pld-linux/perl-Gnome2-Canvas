@@ -7,12 +7,12 @@
 Summary:	Perl interface to the Gnome Canvas
 Summary(pl):	Interfejs perlowy do Gnome Canvas
 Name:		perl-%{pnam}
-Version:	0.93
+Version:	1.00
 Release:	1
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	http://dl.sourceforge.net/gtk2-perl/%{pnam}-%{version}.tar.gz
-# Source0-md5:	80f230484aa3960c7b2d010a0aca2175
+# Source0-md5:	4da803968b781ff75b37c9be7f892b7d
 URL:		http://gtk2-perl.sf.net/
 BuildRequires:	gtk+2-devel
 BuildRequires:	libgnomecanvas-devel >= 2.0.0
