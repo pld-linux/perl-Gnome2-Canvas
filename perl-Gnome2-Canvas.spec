@@ -6,7 +6,7 @@
 %define	pnam	Gnome2-Canvas
 Summary:	Perl interface to the GNOME Canvas
 Summary(pl):	Interfejs perlowy do GNOME Canvas
-Name:		perl-Canvas
+Name:		perl-Gnome2-Canvas
 Version:	1.00
 Release:	1
 License:	LGPL
