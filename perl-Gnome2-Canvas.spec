@@ -1,27 +1,28 @@
 #
 # Conditional build:
-# _with_tests - perform "make test" (requires X server)
+%bcond_with tests	# perform "make test" (requires X server)
 #
 %include	/usr/lib/rpm/macros.perl
 %define	pnam	Gnome2-Canvas
 Summary:	Perl interface to the Gnome Canvas
 Summary(pl):	Interfejs perlowy do Gnome Canvas
 Name:		perl-%{pnam}
-Version:	0.28
+Version:	0.32
 Release:	1
 License:	GPL
 Group:		Development/Languages/Perl
-Source0:	http://search.cpan.org/CPAN/authors/id/M/ML/MLEHMANN/%{pnam}-%{version}.tar.gz
-# Source0-md5:	5ea51c2d9302ca089a2debd035cac50c
+Source0:	http://dl.sourceforge.net/gtk2-perl/%{pnam}-%{version}.tar.gz
+# Source0-md5:	077fa5d2a2e348a02ed6b191b79666c2
+URL:		http://gtk2-perl.sf.net/
 BuildRequires:	gtk+2-devel
 BuildRequires:	libgnomeui-devel >= 2.0.0
-BuildRequires:	perl-ExtUtils-Depends
 BuildRequires:	perl-Glib >= 0.95
 BuildRequires:	perl-Gtk2 >= 0.95
 BuildRequires:	perl-Gnome2 >= 0.30
 BuildRequires:	perl-devel >= 5.8.0
 BuildRequires:	pkgconfig
 BuildRequires:	rpm-perlprov >= 4.1-13
+Requires:	perl-Gnome2-common
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -42,7 +43,7 @@ kontrolki GnomeCanvas.
 %{__make} \
 	OPTIMIZE="%{rpmcflags}"
 
-%{?_with_tests:%{__make} test}
+%{?with_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -56,7 +57,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS TODO README
-%dir %{perl_vendorarch}/Gnome2
 %{perl_vendorarch}/Gnome2/Canvas.pm
 %dir %{perl_vendorarch}/auto/Gnome2/Canvas
 %attr(755,root,root) %{perl_vendorarch}/auto/Gnome2/Canvas/*.so
