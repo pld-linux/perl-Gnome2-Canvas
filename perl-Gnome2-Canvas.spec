@@ -4,8 +4,8 @@
 #
 %include	/usr/lib/rpm/macros.perl
 %define	pnam	Gnome2-Canvas
-Summary:	Perl interface to the Gnome Canvas
-Summary(pl):	Interfejs perlowy do Gnome Canvas
+Summary:	Perl interface to the GNOME Canvas
+Summary(pl):	Interfejs perlowy do GNOME Canvas
 Name:		perl-%{pnam}
 Version:	1.00
 Release:	1
