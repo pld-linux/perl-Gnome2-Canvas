@@ -14,12 +14,12 @@ Group:		Development/Languages/Perl
 Source0:	http://search.cpan.org/CPAN/authors/id/M/ML/MLEHMANN/%{pnam}-%{version}.tar.gz
 # Source0-md5:	5ea51c2d9302ca089a2debd035cac50c
 BuildRequires:	gtk+2-devel
-BuildRequires:	perl-devel >= 5.8.0
+BuildRequires:	libgnomeui-devel >= 2.0.0
 BuildRequires:	perl-ExtUtils-Depends
 BuildRequires:	perl-Glib >= 0.95
 BuildRequires:	perl-Gtk2 >= 0.95
 BuildRequires:	perl-Gnome2 >= 0.30
-BuildRequires:	libgnomeui-devel >= 2.0.0
+BuildRequires:	perl-devel >= 5.8.0
 BuildRequires:	pkgconfig
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -56,7 +56,9 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS TODO README
+%dir %{perl_vendorarch}/Gnome2
 %{perl_vendorarch}/Gnome2/Canvas.pm
+%dir %{perl_vendorarch}/auto/Gnome2/Canvas
 %attr(755,root,root) %{perl_vendorarch}/auto/Gnome2/Canvas/*.so
 %{perl_vendorarch}/auto/Gnome2/Canvas/*.bs
 %{_mandir}/man3/*
