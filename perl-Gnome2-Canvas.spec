@@ -9,7 +9,7 @@ Summary(pl):	Interfejs perlowy do GNOME Canvas
 Name:		perl-%{pnam}
 Version:	1.00
 Release:	1
-License:	GPL
+License:	LGPL
 Group:		Development/Languages/Perl
 Source0:	http://dl.sourceforge.net/gtk2-perl/%{pnam}-%{version}.tar.gz
 # Source0-md5:	4da803968b781ff75b37c9be7f892b7d
