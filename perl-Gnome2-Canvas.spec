@@ -5,6 +5,7 @@
 %include	/usr/lib/rpm/macros.perl
 %define	pnam	Gnome2-Canvas
 Summary:	Perl interface to the Gnome Canvas
+Summary(pl):	Interfejs perlowy do Gnome Canvas
 Name:		perl-%{pnam}
 Version:	0.28
 Release:	1
@@ -26,6 +27,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 The Gnome2 Perl module allows a perl developer to use the GnomeCanvas
 widget.
+
+%description -l pl
+Modu³ Perla Gnome2 umo¿liwia programistom perlowym korzystanie z
+kontrolki GnomeCanvas.
 
 %prep
 %setup -q -n %{pnam}-%{version}
