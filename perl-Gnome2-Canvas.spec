@@ -3,7 +3,7 @@
 %bcond_with tests	# perform "make test" (requires X server)
 #
 %include	/usr/lib/rpm/macros.perl
-%define	pnam	Gnome2-Canvas
+%define		pnam	Gnome2-Canvas
 Summary:	Perl interface to the GNOME Canvas
 Summary(pl):	Interfejs perlowy do GNOME Canvas
 Name:		perl-Gnome2-Canvas
