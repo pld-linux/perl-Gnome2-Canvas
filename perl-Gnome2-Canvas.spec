@@ -16,8 +16,8 @@ Source0:	http://dl.sourceforge.net/gtk2-perl/%{pnam}-%{version}.tar.gz
 URL:		http://gtk2-perl.sf.net/
 BuildRequires:	gtk+2-devel
 BuildRequires:	libgnomecanvas-devel >= 2.0.0
-BuildRequires:  perl-ExtUtils-Depends >= 0.200
-BuildRequires:  perl-ExtUtils-PkgConfig >= 1.03
+BuildRequires:	perl-ExtUtils-Depends >= 0.200
+BuildRequires:	perl-ExtUtils-PkgConfig >= 1.03
 BuildRequires:	perl-Glib >= 1.039
 BuildRequires:	perl-Gtk2 >= 1.039
 BuildRequires:	perl-devel >= 1:5.8.0
