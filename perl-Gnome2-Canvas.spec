@@ -7,22 +7,21 @@
 Summary:	Perl interface to the Gnome Canvas
 Summary(pl):	Interfejs perlowy do Gnome Canvas
 Name:		perl-%{pnam}
-Version:	0.32
+Version:	0.34
 Release:	1
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	http://dl.sourceforge.net/gtk2-perl/%{pnam}-%{version}.tar.gz
-# Source0-md5:	077fa5d2a2e348a02ed6b191b79666c2
+# Source0-md5:	d63942ddc8a221c64190d014998da7a3
 URL:		http://gtk2-perl.sf.net/
 BuildRequires:	gtk+2-devel
 BuildRequires:	libgnomeui-devel >= 2.0.0
-BuildRequires:	perl-Glib >= 0.95
-BuildRequires:	perl-Gtk2 >= 0.95
+BuildRequires:	perl-Glib >= 1.012
+BuildRequires:	perl-Gtk2 >= 1.012
 BuildRequires:	perl-Gnome2 >= 0.30
-BuildRequires:	perl-devel >= 5.8.0
+BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	pkgconfig
 BuildRequires:	rpm-perlprov >= 4.1-13
-Requires:	perl-Gnome2-common
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -51,6 +50,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+rm -f $RPM_BUILD_ROOT%{perl_vendorarch}/Gnome2/Canvas/*.pod
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -59,6 +60,8 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS TODO README
 %{perl_vendorarch}/Gnome2/Canvas.pm
 %dir %{perl_vendorarch}/auto/Gnome2/Canvas
+%dir %{perl_vendorarch}/Gnome2/Canvas/Install
 %attr(755,root,root) %{perl_vendorarch}/auto/Gnome2/Canvas/*.so
 %{perl_vendorarch}/auto/Gnome2/Canvas/*.bs
+%{perl_vendorarch}/Gnome2/Canvas/Install/*
 %{_mandir}/man3/*
