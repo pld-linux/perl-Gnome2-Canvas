@@ -68,6 +68,5 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{perl_vendorarch}/Gnome2/Canvas
 %dir %{perl_vendorarch}/Gnome2/Canvas/Install
 %attr(755,root,root) %{perl_vendorarch}/auto/Gnome2/Canvas/*.so
-%{perl_vendorarch}/auto/Gnome2/Canvas/*.bs
 %{perl_vendorarch}/Gnome2/Canvas/Install/*
 %{_mandir}/man3/*
