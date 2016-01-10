@@ -8,8 +8,8 @@ Summary:	Perl interface to the GNOME Canvas
 Summary(pl.UTF-8):	Interfejs perlowy do GNOME Canvas
 Name:		perl-Gnome2-Canvas
 Version:	1.002
-Release:	14
-License:	LGPL
+Release:	15
+License:	LGPL v2+
 Group:		Development/Languages/Perl
 Source0:	http://downloads.sourceforge.net/gtk2-perl/%{pnam}-%{version}.tar.gz
 # Source0-md5:	93405a987ba4bbd03c2f91592b88f5cb
@@ -37,6 +37,22 @@ widget.
 Moduł Perla Gnome2 umożliwia programistom perlowym korzystanie z
 kontrolki GnomeCanvas.
 
+%package devel
+Summary:	Development files for Perl Gnome2-Canvas bindings
+Summary(pl.UTF-8):	Pliki programistyczne wiązań Gnome2-Canvas dla Perla
+Group:		Development/Languages/Perl
+Requires:	%{name} = %{version}-%{release}
+Requires:	libgnomecanvas-devel >= 2.14.0
+Requires:	perl-Cairo-devel
+Requires:	perl-Glib-devel >= 1.120
+Requires:	perl-Gtk2-devel >= 1.121
+
+%description devel
+Development files for Perl Gnome2-Canvas bindings.
+
+%description devel -l pl.UTF-8
+Pliki programistyczne wiązań Gnome2-Canvas dla Perla.
+
 %prep
 %setup -q -n %{pnam}-%{version}
 
@@ -53,21 +69,23 @@ kontrolki GnomeCanvas.
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
+%{__make} pure_install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -f $RPM_BUILD_ROOT%{perl_vendorarch}/Gnome2/Canvas/*.pod
+%{__rm} $RPM_BUILD_ROOT%{perl_vendorarch}/Gnome2/{Canvas.pod,Canvas/*.pod}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS TODO README
+%doc AUTHORS ChangeLog NEWS README TODO
 %{perl_vendorarch}/Gnome2/Canvas.pm
 %dir %{perl_vendorarch}/auto/Gnome2/Canvas
 %dir %{perl_vendorarch}/Gnome2/Canvas
-%dir %{perl_vendorarch}/Gnome2/Canvas/Install
-%attr(755,root,root) %{perl_vendorarch}/auto/Gnome2/Canvas/*.so
-%{perl_vendorarch}/Gnome2/Canvas/Install/*
-%{_mandir}/man3/*
+%attr(755,root,root) %{perl_vendorarch}/auto/Gnome2/Canvas/Canvas.so
+%{_mandir}/man3/Gnome2::Canvas*.3pm*
+
+%files devel
+%defattr(644,root,root,755)
+%{perl_vendorarch}/Gnome2/Canvas/Install
