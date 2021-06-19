@@ -6,14 +6,14 @@
 Summary:	Perl interface to the GNOME Canvas
 Summary(pl.UTF-8):	Interfejs perlowy do GNOME Canvas
 Name:		perl-Gnome2-Canvas
-Version:	1.002
-Release:	21
+Version:	1.006
+Release:	1
 License:	LGPL v2+
 Group:		Development/Languages/Perl
-Source0:	http://downloads.sourceforge.net/gtk2-perl/%{pnam}-%{version}.tar.gz
-# Source0-md5:	93405a987ba4bbd03c2f91592b88f5cb
+Source0:	https://downloads.sourceforge.net/gtk2-perl/%{pnam}-%{version}.tar.gz
+# Source0-md5:	61176cad7e995ec40b273766ffed3592
 URL:		http://gtk2-perl.sourceforge.net/
-BuildRequires:	gtk+2-devel
+BuildRequires:	gtk+2-devel >= 1:2.0
 BuildRequires:	libgnomecanvas-devel >= 2.14.0
 BuildRequires:	perl-Cairo-devel
 BuildRequires:	perl-ExtUtils-Depends >= 0.200
@@ -33,9 +33,13 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 The Gnome2 Perl module allows a perl developer to use the GnomeCanvas
 widget.
 
+Note: this module is deprecated and no longer maintained.
+
 %description -l pl.UTF-8
 Moduł Perla Gnome2 umożliwia programistom perlowym korzystanie z
 kontrolki GnomeCanvas.
+
+Uwaga: ten moduł jest przestarzały i nie jest już utrzymywany.
 
 %package devel
 Summary:	Development files for Perl Gnome2-Canvas bindings
@@ -72,7 +76,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} pure_install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-%{__rm} $RPM_BUILD_ROOT%{perl_vendorarch}/Gnome2/{Canvas.pod,Canvas/*.pod}
+%{__rm} $RPM_BUILD_ROOT%{perl_vendorarch}/Gnome2/Canvas/*.pod
 
 %clean
 rm -rf $RPM_BUILD_ROOT
